@@ -50,7 +50,7 @@
 
 					<!-- para la foto del usuario-->
 					<div class="file-field input-field">
-						<div class="btn">
+						<div class="btn">  
 							<span>Foto</span>
 							<input type="file" name="foto" >
 						</div>

@@ -15,4 +15,5 @@ if ($row != 0) {
 	echo "<label style='color:green;'>El nombre de usuario esta disponible</label>";
 }
 # para cerrar la conexion y a minimizar recursos
+$con->close()
 ?>
