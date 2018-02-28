@@ -23,7 +23,7 @@
 						<label for="pas1">Contraseña</label>
 					</div>
 
-					<!-- para ingresar contraseña -->
+					<!-- para verificar contraseña -->
 					<div class="input-field">
 						<input type="password" name="pas1" title="CONTRASEÑA CON NUMEROS, LETRAS MAYUSCULAS Y MINUSCULAS ENTRE 8 Y 15 CARACTERES" pattern="[A-Za-z0-9]{8,15}" id="pas2" required>
 						<label for="pas2">Verificar contraseña</label>
@@ -59,7 +59,7 @@
 						</div>
 						
 					</div>
-
+<button type="submit" class="btn black" id="btn_guardar">Guardar<i class="material-icons">send</i> </button>
 				</form> 
 			</div>
 		</div>
@@ -67,22 +67,9 @@
 </div>
 
 <?php include '../extend/script.php'; ?>
-<!-- metodo ajax para verificar que el nick exista en la bd -->
-	<script>
-		$('#nick').change(function(){
-			$.post('ajax_validacion_nick.php',{
-				nick:$('#nick').val(),
+<!-- hacemos llamado a los javascripts-->
+	<script src="../js/validacion.js"></script>
 
-				beforeSend: function(){
-					$('.validacion').html("Espere un momento por favor");
-				}
-
-			}, function(respuesta){
-				$('.validacion').html(respuesta);
-			})
-	});
-
-	</script>
 	
 
 </body>
