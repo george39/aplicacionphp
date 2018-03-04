@@ -1,4 +1,6 @@
+
 <?php
+#en este archivo se resiven las variable de php
 #hacemos llamado a la conexion 
 include '../conexion/conexion.php';
 #validadmos si se esta enviando por metodo post
@@ -11,10 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$nombre = $con->cubrid_real_escape_string(htmlentities($_POST['nombre']));
 	$correo = $con->cubrid_real_escape_string(htmlentities($_POST['correo']));
 }else {
-	echo "<script>
-		alert('Utiliza el formulario');
-		location.href='index.php';
-		</script>";
+	#redireccionamiento a la pagino donde estemos creando la alerta
+	header('location:../extend/alerta.php?msj=Utiliza el formulario&c=us&p=in&t=error');
 }
 
 ?>
