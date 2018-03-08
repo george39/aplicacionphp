@@ -10,6 +10,19 @@
 <!-- para inicializar todo con materialize -->
 <!-- para que funcione el boton de menu en pantalla pequeña e inicializar todo-->
 <script>
+
+	/*script para llamar al input buscar y filtrar cuando se valla escribiendo */
+	$('#buscar').keyup(function(event) {
+		var contenido = new RegExp($(this).val(), 'i'); /* este codigo es para que sea sencible a mayusculas y minusculas*/
+		$('tr').hide(); /* para ocultar las tr*/
+		$('tr').filter(function() {  /* para hacer el filtro dentro de las tr que ya ha oculatado*/
+			return contenido.test($(this).text());
+		}).show(); /* para que muestre lo que filtra*/ 
+		$('.cabecera').attr('style',''); /* para que no me filtre las cabeceras y me las muestre*/
+		
+	});
+
+
 	$('.button-collpase').sideNav();
 	$('select').material_select();  /* inicializa el select para que se vea */
 	

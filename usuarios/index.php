@@ -66,6 +66,63 @@
 	</div>
 </div>
 
+
+<!--barra de busqueda para filtrar los usuarios  -->
+<div class="row">
+	<div class="col s12">
+		<nav class="brown lighten-3">
+			<div class="nav-wrapper">
+				<div class="input-field">
+					<input type="search" id="buscar" autocomplete="off">
+					<label for="buscar"><i class="material-icons">search</i></label>
+					<i class="material-icons">close</i>
+				</div>
+			</div>
+		</nav>
+	</div>
+</div>
+
+<!-- mostrar los datos del formulario en el navegador -->
+<?php $sel = $con->query("SELECT * FROM usuario"); 
+$row = mysqli_num_rows($sel);
+?>
+<div class="row">
+	<div class="col s12">
+		<div class="card">
+			<div class="card-content">
+				<span class="card-title">Usuario (<?php echo $row ?>)</span> <!-- para mostrar cuantos usuarios hay -->
+				<table>
+					<head>
+						<tr class="cabecera"> <!--para que no me filtre las tr y me muestre las cabeceras -->
+						<th>Nick</th>
+						<th>Nombre</th>
+						<th>Correo</th>
+						<th>Nivel</th>
+						<th>Foto</th>
+						<th>Bloqueo</th>
+						<th></th>
+						<th></th>
+						</tr>
+					</head>
+					<!-- para recorrer las filas -->
+					<?php while ($f = $sel->fetch_assoc()) { ?>
+						<tr>
+							<td><?php echo $f['nick'] ?></td>
+							<td><?php echo $f['nombre'] ?></td>
+							<td><?php echo $f['correo'] ?></td>
+							<td><?php echo $f['nivel'] ?></td>
+							<td><img src="<?php echo $f['foto'] ?>" width="50" class="circle"></td>
+							<td><?php echo $f['bloqueo'] ?></td>
+							<td></td>
+							<td></td>
+						</tr>
+					<?php } ?>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
 <?php include '../extend/script.php'; ?>
 <!-- hacemos llamado a los javascripts-->
 	<script src="../js/validacion.js"></script>

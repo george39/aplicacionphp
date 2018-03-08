@@ -81,6 +81,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$ruta = "foto_perfil/matrix.jpg"; #por si el usuario no sube ninguna foto se le da una por defecto
 	}
 
+#guardar los datos de el formulario en la base de datos 
+$pas1 = sha1($pas1);  #para encriptar las contraseñas
+$ins = $con->query("INSERT INTO usuario VALUES('','$nick','$pas1','$nombre','$correo','$nivel',1,'$ruta')"); #en numero 1 significa que esl usuario esta activo 
+if ($ins) {
+		header('location:../extend/alerta.php?msj=El usuario ha sido registrado&c=us&p=in&t=success');
+	}else {
+		header('location:../extend/alerta.php?msj=El no pudo ser registrado&c=us&p=in&t=error');
+	}
+
+	#cerramos la conexion
+	$con->close();	
+
+
 }else {
 	#redireccionamiento a la pagino donde estemos creando la alerta
 	header('location:../extend/alerta.php?msj=Utiliza el formulario&c=us&p=in&t=error');
