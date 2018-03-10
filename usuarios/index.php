@@ -1,5 +1,9 @@
 
-<?php include '../extend/header.php'; ?>
+<?php include '../extend/header.php'; 
+#para bloquear usuarios
+include '../extend/permiso.php';
+
+?>
 
 <div class="row">
 	<div class="col s12">
