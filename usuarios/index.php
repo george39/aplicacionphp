@@ -116,7 +116,16 @@ $row = mysqli_num_rows($sel);
 							<td><?php echo $f['correo'] ?></td>
 							<td><?php echo $f['nivel'] ?></td>
 							<td><img src="<?php echo $f['foto'] ?>" width="50" class="circle"></td>
-							<td><?php echo $f['bloqueo'] ?></td>
+							<!--para bloquear los usuarios -->
+							<td>
+							<!-- para poner icono para bloquear-->
+
+							<?php if ($f['bloqueo'] == 1): ?> 
+								<a href="bloqueo_manual.php?us=<?php echo $f['id'] ?>&bl=<?php echo $f['bloqueo'] ?>"><i class="material-icons green-text">lock_open</i></a>
+							<?php else: ?>
+								<a href="bloqueo_manual.php?us=<?php echo $f['id'] ?>&bl=<?php echo $f['bloqueo'] ?>"><i class="material-icons red-text">lock_outline</i></a>
+							<?php endif; ?>
+							</td>
 							<td></td>
 							<td></td>
 						</tr>
