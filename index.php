@@ -24,7 +24,7 @@
 					<div class="card z-depth-5">
 						<div class="card-content">
 							<span class="card-title"><center>Inicio de sesion</center></span>
-							<form action="login" method="post" autocomplete="off">
+							<form action="login/index.php" method="post" autocomplete="off">
 								<div class="input-field">
 									<i class="material-icons prefix" >perm_identity</i>
 									<input type="text" name="usuario" id="usuario" required pattern="[A-Za-z]{8,15}">

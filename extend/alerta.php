@@ -28,15 +28,32 @@ switch ($c) {
 	case 'us':
 		$carpeta = '../usuarios/';
 		break;
+
+		#para el login de usuario
+		case 'home':
+			$carpeta = '../inicio/';# si el logueo fue exitoso nos redirecciona a la carpeta de inicio 
+			break;
+		#por si no es exitoso el logueo
+		case 'salir':
+				$carpeta = '../';
+				break;	
 }
 
 switch ($p) {
 	case 'in': /* in es un valor y quiere decir index */
 		$pagina = 'index.php';
 		break;
+
+	#case para el login 
+	case 'home':
+		$pagina = 'index.php';
+		break;
+	case 'salir':
+		$pagina = '';
+		break;			
 }
 
-#varible que se forma con la carpeta y la pagina y se direcciona en la funcion de la alerta
+#variAble que se forma con la carpeta y la pagina y se direcciona en la funcion de la alerta
 $dir = $carpeta.$pagina;
 
 if ($t == "error") {
