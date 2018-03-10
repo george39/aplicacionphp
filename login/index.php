@@ -42,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD']== 'POST') { #Preguntar si se esta enviando por el
 			}
 
 			#validadcion para que el usuario pueda entrar
+			#aqui se generan las variables desision
 			if ($nick == $usuario && $contra == $pass2 && $nivel == 'ADMINISTRADOR') {
 				$_SESSION['nick'] = $nick;
 				$_SESSION['nombre'] = $nombre;
@@ -49,8 +50,18 @@ if ($_SERVER['REQUEST_METHOD']== 'POST') { #Preguntar si se esta enviando por el
 				$_SESSION['correo'] = $correo;
 				$_SESSION['foto'] = $foto;
 				header('location:../extend/alerta.php?msj=Bienvenido&c=home&p=home&t=success');
-			}else{
+
+				#aqui es para que el usuario asesor pueda ver el menu
+			}elseif ($nick == $usuario && $contra == $pass2 && $nivel == 'ASESOR') {
+				$_SESSION['nick'] = $nick;
+				$_SESSION['nombre'] = $nombre;
+				$_SESSION['nivel'] = $nivel;
+				$_SESSION['correo'] = $correo;
+				$_SESSION['foto'] = $foto;
+				header('location:../extend/alerta.php?msj=Bienvenido&c=home&p=home&t=success');
 				#alertas de error
+				
+			}else {
 				header('location:../extend/alerta.php?msj=no tienes el permiso para entrar&c=salir&p=salir&t=error');
 			}
 

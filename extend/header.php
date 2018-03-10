@@ -48,4 +48,12 @@ if (!isset($_SESSION['nick'])) { #pregunta si existe la variable desision
 
 <main>
 <!-- llamado al archivo menu -->
-<?php include 'menu_admin.php' ?>
+<?php 
+#esto es para que depende el tipo de usuario lo envie a un menu o a otro menu
+if ($_SESSION['nivel'] == 'ADMINISTRADOR') {
+	include 'menu_admin.php';
+}else {
+	include 'menu_asesor.php'; 
+}
+
+?>

@@ -16,9 +16,7 @@
 	<li><a href="../inicio"><i class="material-icons">home</i>Inicio</a></li>	
 	<li><div class="divider"></div></li>
 
-	<!--aqui el administrador administra los usuarios -->
-	<li><a href="../usuarios"><i class="material-icons">contacts</i>Usuarios</a></li>	
-	<li><div class="divider"></div></li>
+	<!--aqui el linck a los usuarios porque es solo para el administrador -->
 	<li><a href="../login/salir.php"><i class="material-icons">power_settings_new</i>Salir</a></li>	
 	<li><div class="divider"></div></li>
 </ul>
