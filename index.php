@@ -1,3 +1,12 @@
+<!--este codigo es para que la sesion no se cierre aunque se cierre el navegador  -->
+<?php @session_start();
+if (isset($_SESSION['nick'])) { #pregunta si existe la variable desision
+	header('location:inicio');
+} 
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

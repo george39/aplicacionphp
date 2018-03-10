@@ -1,4 +1,7 @@
 <?php include '../conexion/conexion.php'; 
+if (!isset($_SESSION['nick'])) { #pregunta si existe la variable desision 
+	header('location:../');  #este codigo es para que no inicie sesion si se cierra el 
+}                               #navegador y se pega la url
 ?>
 
 

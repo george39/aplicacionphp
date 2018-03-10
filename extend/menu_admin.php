@@ -8,11 +8,13 @@
 			<div class="background">
 				<img src="https://i.ytimg.com/vi/FuHcna7q15U/maxresdefault.jpg">
 			</div> 
-			<a href="" ><img src="http://imagenesdecarrosdeportivos.org/wp-content/uploads/2017/10/imagenes-de-carros-deportivos-ferrari-rojo-e1508044077313.jpg" class="circle" alt=""></a>
-			<a href="" class="white-text">Jorge Ivan</a> <br>
-			<a href="" class="white-text">correo@correo.com</a>
+			<a href="" ><img src="../usuarios/<?php echo $_SESSION['foto'] ?>" class="circle" alt=""></a>
+			<a href="" class="white-text"><?php echo $_SESSION['nombre'] ?></a> <br> <!--aqui nos traemos los datos de la bd del usuario -->
+			<a href="" class="white-text"><?php echo $_SESSION['correo'] ?></a>
 		</div>
 	</li>
-	<li><a href=""><i class="material-icons">home</i>Inicio</a></li>	
+	<li><a href="../inicio"><i class="material-icons">home</i>Inicio</a></li>	
+	<li><div class="divider"></div></li>
+	<li><a href="../login/salir.php"><i class="material-icons">power_settings_new</i>Salir</a></li>	
 	<li><div class="divider"></div></li>
 </ul>
