@@ -102,6 +102,7 @@ $row = mysqli_num_rows($sel);
 						<th>Nombre</th>
 						<th>Correo</th>
 						<th>Nivel</th>
+						<th></th>
 						<th>Foto</th>
 						<th>Bloqueo</th>
 						<th></th>
@@ -114,7 +115,23 @@ $row = mysqli_num_rows($sel);
 							<td><?php echo $f['nick'] ?></td>
 							<td><?php echo $f['nombre'] ?></td>
 							<td><?php echo $f['correo'] ?></td>
-							<td><?php echo $f['nivel'] ?></td>
+							<td>
+
+								<!--este es para cambiar de usuario -->
+								<form action="up_nivel.php" method="post">
+									<input type="hidden" name="id" value="<?php echo $f['id'] ?>"><!-- hidden es un input invisible -->
+										<select name="nivel" required>
+											<option value="<?php echo $f['nivel'] ?>" ><?php echo $f['nivel'] ?></option>
+											<option value="ADMINISTRADOR">ADMINISTRADOR</option>
+											<option value="ASESOR">ASESOR</option>
+										</select>
+										
+							</td>
+							<td>
+								<!--boton para cambiar de usuario -->
+								<button type="submit" class="btn-floating"><i class="material-icons">repeat</i></button>
+								</form>
+							</td>
 							<td><img src="<?php echo $f['foto'] ?>" width="50" class="circle"></td>
 							<!--para bloquear los usuarios -->
 							<td>
