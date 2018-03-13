@@ -1,6 +1,7 @@
 <!--codigo para cambiar de nivel -->
 <?php
 include '../conexion/conexion.php';
+include '../extend/permiso.php'; #este include simpre tiene que ir en las paginas de administrador
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$id = $con->real_escape_string(htmlentities($_POST['id']));
@@ -14,4 +15,5 @@ if ($up) {
 }else {
 	header('location:../extend/alerta.php?msj=Utiliza el formulario&c=us&p=in&t=error');
 }
+$con->close();
 ?>

@@ -105,8 +105,7 @@ $row = mysqli_num_rows($sel);
 						<th></th>
 						<th>Foto</th>
 						<th>Bloqueo</th>
-						<th></th>
-						<th></th>
+						<th>Eliminar</th>
 						</tr>
 					</head>
 					<!-- para recorrer las filas -->
@@ -143,8 +142,10 @@ $row = mysqli_num_rows($sel);
 								<a href="bloqueo_manual.php?us=<?php echo $f['id'] ?>&bl=<?php echo $f['bloqueo'] ?>"><i class="material-icons red-text">lock_outline</i></a>
 							<?php endif; ?>
 							</td>
-							<td></td>
-							<td></td>
+							<td>
+								<a href="#" class="btn-floating red" onclick="swal({title: 'Esta seguro que desea minar el usuario?', text: 'Al eliminarlo no podra recuperarlo', type: 'warning', showCancelButton: true, confirmButtonColor: '#3085d6', cancelButtonColor: '#d33', confirmButtonText: 'Si, eliminarlo!' }).then(function () {
+								    location.href='eliminar_usuario.php?id=<?php echo $f['id'] ?>'; })"><i class="material-icons">clear</i></a>
+							</td>
 						</tr>
 					<?php } ?>
 				</table>
