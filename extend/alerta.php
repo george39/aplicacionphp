@@ -35,8 +35,13 @@ switch ($c) {
 			break;
 		#por si no es exitoso el logueo
 		case 'salir':
-				$carpeta = '../';
-				break;	
+			$carpeta = '../';
+			break;
+
+		#caso para actualizar la foto de perfil		
+		case 'pe':
+			$carpeta = '../perfil/';
+			break;			
 }
 
 switch ($p) {

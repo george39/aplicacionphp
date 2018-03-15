@@ -11,7 +11,7 @@ include '../extend/header.php';
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <form action="up_foto.php" method="post">
+          <form action="up_foto.php" method="post" enctype="multipart/form-data"> <!-- enctype="multipart/form-data" es para indicar que el formulario lleva un archivo -->
           	<div class="file-field input-field">
           		<div class="btn">
           			<span>Foto</span>
